@@ -863,7 +863,21 @@ Overseeing the integration of hardware sensors for temperature, sound, and ultra
     </script>
     <script src="js/app.js"></script>
     <script src="js/gallery-init.js"></script>
+    <script src="../dist/bundle.js"></script>
     <script type="module" src="js/main.js"></script>
+
+    <script>
+      let count = localStorage.getItem("visitor_count");
+  
+      if (!count) {
+        count = 1;
+      } else {
+        count = parseInt(count) + 1;
+      }
+  
+      localStorage.setItem("visitor_count", count);
+      document.getElementById("visitor-count").textContent = `Visitor Count: ${count}`;
+    </script>
     
 
     <!-- Load Scripts End  -->
